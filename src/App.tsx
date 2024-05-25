@@ -1,10 +1,11 @@
 import "./App.css";
-import Home from "./components/Home";
+import MediaL from "./components/MediaL";
+import Home from "./components/Home"
 
 function App() {
   return (
     <>
-      <Home></Home>
+      
     </>
   );
 }
