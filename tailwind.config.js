@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    colors: {
+      'custom-gold': '#cab57e'
+    }
   },
   plugins: [
     require('daisyui'),
