@@ -1,33 +1,11 @@
-import { useEffect, useState } from "react";
-import {
-  Box,
-  SimpleGrid,
-  Stack,
-  Text,
-  Image,
-  Button,
-  Collapse,
-} from "@chakra-ui/react";
+import { Box, SimpleGrid, Stack, Text, Image, Button, Collapse } from "@chakra-ui/react";
 import bg1 from "../../img/mediaBg.png";
+import useExpand from "../../Hooks/useExpand";
+import useScroll from "../../Hooks/useScroll";
 
-const MediaL = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [isExpand, setExpand] = useState(false);
-
-  const handleTaggle = () => {
-    setExpand(!isExpand);
-  };
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+const MediaR = () => {
+  const scrollY = useScroll();
+  const { isExpand, handleTaggle } = useExpand();
 
   return (
     <>
@@ -56,12 +34,7 @@ const MediaL = () => {
                 在风土一词的概念中，饱含法国传统的葡萄酒文化信息，在其他语言中难以找到与其意义相称的词汇。风土是优质葡萄酒的遗传精髓，没有了它，一切都不复存在。但是，只有人们的辛勤耕作与发奋图强，风土的个性方可得到真正的张扬与提升。
               </Text>
               <Collapse in={isExpand}>
-                <Text
-                  mb={"8"}
-                  fontSize="20px"
-                  lineHeight="30px"
-                  color={"black"}
-                >
+                <Text mb={"8"} fontSize="20px" lineHeight="30px" color={"black"}>
                   事实上，如果没有人们这种高度的关注与热情，那么任何一片格雷夫石子地山丘，即便它有多么得天独厚，也不会成为一个优质葡萄园。选择最合适的葡萄品种，确定葡萄植株的生长条件，完善酿造和陈化工艺，人们整整用了五百多年摸索出一套培育高品质葡萄酒的好方法。
                 </Text>
               </Collapse>
@@ -87,4 +60,4 @@ const MediaL = () => {
   );
 };
 
-export default MediaL;
+export default MediaR;
