@@ -3,7 +3,6 @@ import video from "../video/home.mp4";
 
 const Home = () => {
   return (
-    <>
       <Box position="relative" minH="100vh" bg="gray.800">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -31,7 +30,6 @@ const Home = () => {
           </VStack>
         </Center>
       </Box>
-    </>
   );
 };
 
