@@ -8,7 +8,7 @@ import {
   Button,
   Collapse,
 } from "@chakra-ui/react";
-import bg1 from "../img/mediaBg.png";
+import bg1 from "../../img/mediaBg.png";
 
 const MediaL = () => {
   const [scrollY, setScrollY] = useState(0);
