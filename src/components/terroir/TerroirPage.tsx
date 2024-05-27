@@ -6,7 +6,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 const TerroirPage = () => {
   return (
-    <Box bg={"#f1f1f1"} bgImage={`url(${bg1})`} bgSize={"cover"} w={"1140px"}>
+    <Box bg={"#f1f1f1"}>
       <TerroirHome />
       <MediaL />
       <MediaR />

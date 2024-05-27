@@ -2,7 +2,7 @@ import { Button, Img } from "@chakra-ui/react";
 
 const BeerCard = () => {
   return (
-    <div className="card w-80  bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl" >
       <figure className="px-10 pt-10">
         <Img
           src="https://s3-eu-west-3.amazonaws.com/cm-site/wp-content/uploads/2018/02/17151225/pavillon-blanc-268x456.png"

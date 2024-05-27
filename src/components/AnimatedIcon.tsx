@@ -30,7 +30,7 @@ const AnimatedIcon = () => {
       height={`${spriteHeight}px`}
       background={`url(${spriteSheet}) -${column * spriteWidth}px -${row * spriteHeight}px`}
       backgroundSize={`${spriteWidth * columns}px ${spriteHeight * rows}px`}
-      transform="scale(0.5)"
+      transform="scale(0.35)"
     />
   );
 };
