@@ -87,7 +87,6 @@ const ProductHome = () => {
           </Stack>
         </Box>
       </Center>
-      <Text mt={"1000"}>1</Text>
     </Stack>
   );
 };
