@@ -5,7 +5,7 @@ import bottle from "../../img/bottle.png";
 import useScroll from "../../Hooks/useScroll";
 import bottleBorder from "../../img/bottleBorder.png";
 import showdow from "../../img/shadow.png";
-import AnimatedIcon from "../AnimatedIcon";
+import DownIcon from "../AnimatedIcon";
 
 const fadeIn = keyframes`
     from {
@@ -81,8 +81,11 @@ const ProductHome = () => {
                 transform="scale(4)"
               />
             </Box>
-            <Box mt="-50px" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
-              <AnimatedIcon />
+            <Box
+              mt="-50px"
+              style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+            >
+              <DownIcon />
             </Box>
           </Stack>
         </Box>

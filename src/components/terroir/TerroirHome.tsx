@@ -1,7 +1,7 @@
 import { Box, Center, Heading, keyframes, Stack, Text } from "@chakra-ui/react";
 import homeBg from "../../img/mediaHomeBg.png";
 import useScroll from "../../Hooks/useScroll";
-import AnimatedIcon from "../AnimatedIcon";
+import DownIcon from "../AnimatedIcon";
 import bg1 from "../../img/mediaBg.png";
 import { motion } from "framer-motion";
 
@@ -47,8 +47,14 @@ const TerroirHome = () => {
                 卓越风土孕育上乘佳酿
               </Text>
               <MotionBox
-                initial={{ transform: "translate3d(0px, calc(50% + 0.4px), 0px)", opacity: 0 }}
-                animate={{ transform: "translate3d(0px, 0px, 0px)", opacity: 1 }}
+                initial={{
+                  transform: "translate3d(0px, calc(50% + 0.4px), 0px)",
+                  opacity: 0,
+                }}
+                animate={{
+                  transform: "translate3d(0px, 0px, 0px)",
+                  opacity: 1,
+                }}
                 transition={{ duration: 1 }}
               >
                 <Heading
@@ -64,7 +70,7 @@ const TerroirHome = () => {
           </Box>
         </Center>
       </Center>
-      <AnimatedIcon />
+      <DownIcon />
     </Stack>
   );
 };
