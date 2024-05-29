@@ -1,4 +1,12 @@
-import { Box, Center, Stack, Text, Img, keyframes } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Stack,
+  Text,
+  Img,
+  keyframes,
+  css,
+} from "@chakra-ui/react";
 import productBg from "../../img/productBg.jpg";
 import productHome from "../../img/mediaHomeBg.png";
 import bottle from "../../img/bottle.png";
@@ -6,6 +14,7 @@ import useScroll from "../../Hooks/useScroll";
 import bottleBorder from "../../img/bottleBorder.png";
 import showdow from "../../img/shadow.png";
 import DownIcon from "../AnimatedIcon";
+import { useEffect, useState } from "react";
 
 const fadeIn = keyframes`
     from {
@@ -17,11 +26,22 @@ const fadeIn = keyframes`
 `;
 
 const imageStyle = {
-  animation: `${fadeIn} 4s ease-in-out`,
+  animation: `${fadeIn} 3s ease-in-out`,
+};
+const buttonStyle = {
+  animation: `${fadeIn} 1s ease-in-out`,
 };
 
 const ProductHome = () => {
   const scrollY = useScroll();
+  const [isVisble, setIsVisble] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisble(true);
+    }, 1300);
+  }, []);
+
   return (
     <Stack
       w={"100vw"}
@@ -81,12 +101,15 @@ const ProductHome = () => {
                 transform="scale(4)"
               />
             </Box>
-            <Box
-              mt="-50px"
-              style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-            >
-              <DownIcon />
-            </Box>
+            {isVisble ? (
+              <Box
+                mt="-50px"
+                style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+                css={buttonStyle}
+              >
+                <DownIcon />
+              </Box>
+            ): <Box  mt={'53.5px'} bg={'transparent'} height={'56px'} w={'56px'}></Box>}
           </Stack>
         </Box>
       </Center>

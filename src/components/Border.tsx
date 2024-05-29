@@ -16,11 +16,16 @@ const createLineAnimation = (lineRef: any) => {
     // 创建动画
     gsap.to(lineRef.current, {
       strokeDashoffset: 0,
-      duration: 1.5,
+      duration: 1.3,
+      delay: 0.1,
       ease: "power1.inOut",
       onUpdate: function () {
         const progress = this.progress();
-        const color = gsap.utils.interpolate("#EEE8AA", "rgba(255, 255, 255, 0.4)", progress);
+        const color = gsap.utils.interpolate(
+          "#EEE8AA",
+          "rgba(255, 255, 255, 0.4)",
+          progress
+        );
         gsap.set(lineRef.current, { stroke: color });
       },
     });
@@ -63,33 +68,112 @@ const LineAnimation = () => {
 
   return (
     <Box position="relative" width="100%" height="100vh">
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 600 600"
-        preserveAspectRatio="none"
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }}
-      >
-        <line ref={lineRef1} x1={outerX1} y1={outerY1} x2={outerX1} y2={outerY2} strokeWidth="1.1" stroke="white" />
-        <line ref={lineRef2} x1={outerX1} y1={outerY1} x2={outerX2} y2={outerY1} strokeWidth="1.1" stroke="white" />
-        <line ref={lineRef3} x1={outerX2} y1={outerY2} x2={outerX1} y2={outerY2} strokeWidth="1.1" stroke="white" />
-        <line ref={lineRef4} x1={outerX2} y1={outerY2} x2={outerX2} y2={outerY1} strokeWidth="1.1" stroke="white" />
-      </svg>
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 600 600"
-        preserveAspectRatio="none"
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }}
-      >
-        <line ref={lineRef5} x1={innerX1} y1={innerY2} x2={innerX1} y2={innerY1} strokeWidth="0.8" stroke="white" />
-        <line ref={lineRef6} x1={innerX1} y1={innerY2} x2={innerX2} y2={innerY2} strokeWidth="0.8" stroke="white" />
-        <line ref={lineRef7} x1={innerX2} y1={innerY1} x2={innerX1} y2={innerY1} strokeWidth="0.8" stroke="white" />
-        <line ref={lineRef8} x1={innerX2} y1={innerY1} x2={innerX2} y2={innerY2} strokeWidth="0.8" stroke="white" />
-      </svg>
-      <Box position="relative" zIndex={1}>
+      <Box>
         <Home />
       </Box>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 600 600"
+        preserveAspectRatio="none"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none", // 不捕获鼠标事件
+        }}
+      >
+        <line
+          ref={lineRef1}
+          x1={outerX1}
+          y1={outerY1}
+          x2={outerX1}
+          y2={outerY2}
+          strokeWidth="1.1"
+          stroke="white"
+        />
+        <line
+          ref={lineRef2}
+          x1={outerX1}
+          y1={outerY1}
+          x2={outerX2}
+          y2={outerY1}
+          strokeWidth="1.1"
+          stroke="white"
+        />
+        <line
+          ref={lineRef3}
+          x1={outerX2}
+          y1={outerY2}
+          x2={outerX1}
+          y2={outerY2}
+          strokeWidth="1.1"
+          stroke="white"
+        />
+        <line
+          ref={lineRef4}
+          x1={outerX2}
+          y1={outerY2}
+          x2={outerX2}
+          y2={outerY1}
+          strokeWidth="1.1"
+          stroke="white"
+        />
+      </svg>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 600 600"
+        preserveAspectRatio="none"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none", // 不捕获鼠标事件
+        }}
+      >
+        <line
+          ref={lineRef5}
+          x1={innerX1}
+          y1={innerY2}
+          x2={innerX1}
+          y2={innerY1}
+          strokeWidth="0.8"
+          stroke="white"
+        />
+        <line
+          ref={lineRef6}
+          x1={innerX1}
+          y1={innerY2}
+          x2={innerX2}
+          y2={innerY2}
+          strokeWidth="0.8"
+          stroke="white"
+        />
+        <line
+          ref={lineRef7}
+          x1={innerX2}
+          y1={innerY1}
+          x2={innerX1}
+          y2={innerY1}
+          strokeWidth="0.8"
+          stroke="white"
+        />
+        <line
+          ref={lineRef8}
+          x1={innerX2}
+          y1={innerY1}
+          x2={innerX2}
+          y2={innerY2}
+          strokeWidth="0.8"
+          stroke="white"
+        />
+      </svg>
+      
     </Box>
   );
 };

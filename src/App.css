@@ -12,3 +12,35 @@
 }
 
 
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-bottom {
+	animation: fade-in-bottom 1s ease-in-out forwards 0.4s;
+}
+.fade-in {
+  animation: fade-in-bottom 2s ease-in-out forwards;
+}
+.fade-in-top {
+	animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.fade-in-top2 {
+	animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both 0.25s;
+}
