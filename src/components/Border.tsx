@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Box } from "@chakra-ui/react";
-import Home from "./Home";
+
+interface Props {
+  children: any;
+}
 
 const createLineAnimation = (lineRef: any) => {
   useEffect(() => {
@@ -32,7 +35,7 @@ const createLineAnimation = (lineRef: any) => {
   }, [lineRef]);
 };
 
-const LineAnimation = () => {
+const Border = ({ children }: Props) => {
   const lineRef1 = useRef(null);
   const lineRef2 = useRef(null);
   const lineRef3 = useRef(null);
@@ -68,9 +71,7 @@ const LineAnimation = () => {
 
   return (
     <Box position="relative" width="100%" height="100vh">
-      <Box>
-        <Home />
-      </Box>
+      <Box>{children}</Box>
       <svg
         width="100%"
         height="100%"
@@ -173,9 +174,8 @@ const LineAnimation = () => {
           stroke="white"
         />
       </svg>
-      
     </Box>
   );
 };
 
-export default LineAnimation;
+export default Border;

@@ -1,7 +1,7 @@
 import MediaL from "./MediaL";
 import MediaR from "./MediaR";
 import TerroirHome from "./TerroirHome";
-import io from "../../lo.json";
+import io from '../../icon/io.json'
 import { Box, Text } from "@chakra-ui/react";
 import { LordIcon } from "../../lord-icon";
 
