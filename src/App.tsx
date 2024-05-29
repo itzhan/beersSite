@@ -1,12 +1,11 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Productpage from "./components/product/Productpage";
 import io from "./lo.json";
-import { LordIcon } from "./lord-icon";
 import { Box } from "@chakra-ui/react";
-import TerroirPage from "./components/terroir/TerroirPage";
+import Home from "./components/Home";
+import AnimatedBox from "./components/Border";
 
 function App() {
   const blob = new Blob([JSON.stringify(io)], { type: "application/json" });
@@ -20,8 +19,8 @@ function App() {
   }, []);
 
   return (
-    <Box>
-        <TerroirPage/>
+    <Box w={'100vw'} h={'100vh'}>
+        <AnimatedBox/>
     </Box>
   );
 }
