@@ -1,20 +1,26 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { LordIcon } from "../lord-icon";
-import io from "../icon/io.json";
 import cherrs from "../icon/cheersIcon.json";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+const pageTransition = {
+  initial: { brightness: 0 },
+  animate: { brightness: 100 },
+  exit: { brightness: 0 },
+};
 
 const Layout = () => {
-  const blob = new Blob([JSON.stringify(io)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-
-  const blob1 = new Blob([JSON.stringify(cherrs)], {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const blob = new Blob([JSON.stringify(cherrs)], {
     type: "application/json",
   });
-  const url1 = URL.createObjectURL(blob1);
+  const url = URL.createObjectURL(blob);
+
   useEffect(() => {
     AOS.init({
       duration: 800, // 动画持续时间（毫秒）
@@ -22,22 +28,30 @@ const Layout = () => {
     });
   }, []);
 
+  const handleClick = (event: any) => {
+    event.preventDefault(); // 阻止默认导航行为
+    // 触发动画后延迟导航
+    setTimeout(() => {
+      navigate("/");
+    }, 1800); // 500ms 的延迟，可以根据需要调整
+  };
+
   return (
-    <div>
+    <>
       <Box
         position={"fixed"}
         right={10}
         top={10}
-        zIndex={"10"}
+        zIndex={"1"}
         _hover={{ cursor: "pointer" }}
       >
-        <HStack>
-          <Text fontSize={'13px'}>主页</Text>
-          <LordIcon src={url1} trigger="click" size={40} />
+        <HStack onClick={handleClick}>
+          <Text fontSize={"13px"}  color={location.pathname === '/terroir' ? 'black' : 'inherit'}>主页</Text>
+          <LordIcon src={url} trigger="click" size={40} />
         </HStack>
       </Box>
       <Outlet />
-    </div>
+    </>
   );
 };
 

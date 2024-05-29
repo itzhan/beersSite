@@ -11,19 +11,9 @@ const TerroirPage = () => {
 
   return (
     <Box bg={"#f1f1f1"} position={"relative"}>
-      <Box
-        position={"fixed"}
-        right={3}
-        top={3}
-        zIndex={"10"}
-        _hover={{ cursor: "pointer" }}
-      >
-        <LordIcon src={url} trigger="click" size={55}/>
-      </Box>
       <TerroirHome />
       <MediaL />
       <MediaR />
-      <Text mt={"1000"}>1</Text>
     </Box>
   );
 };
