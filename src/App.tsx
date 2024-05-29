@@ -8,9 +8,6 @@ import Home from "./components/Home";
 import AnimatedBox from "./components/Border";
 
 function App() {
-  const blob = new Blob([JSON.stringify(io)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-
   useEffect(() => {
     AOS.init({
       duration: 800, // 动画持续时间（毫秒）
