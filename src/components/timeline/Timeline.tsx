@@ -1,4 +1,4 @@
-import { Box, Center, Heading, Stack, Text } from "@chakra-ui/react";
+import { Center, Heading, Stack } from "@chakra-ui/react";
 
 const Timeline = () => {
   return (

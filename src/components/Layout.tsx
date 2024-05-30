@@ -1,17 +1,10 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { LordIcon } from "../lord-icon";
 import cherrs from "../icon/cheersIcon.json";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-
-const pageTransition = {
-  initial: { brightness: 0 },
-  animate: { brightness: 100 },
-  exit: { brightness: 0 },
-};
 
 const Layout = () => {
   const location = useLocation();

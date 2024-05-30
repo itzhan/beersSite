@@ -2,10 +2,8 @@ import {
   Box,
   Center,
   Stack,
-  Text,
   Img,
   keyframes,
-  css,
 } from "@chakra-ui/react";
 import productBg from "../../img/productBg.jpg";
 import productHome from "../../img/mediaHomeBg.png";
@@ -37,7 +35,7 @@ const ProductHome = () => {
   const [isVisble, setIsVisble] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setIsVisble(true);
     }, 1300);
   }, []);

@@ -1,13 +1,10 @@
 import {
-  Box,
   Center,
   Heading,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
-import bg from "../../img/productBg2.jpg";
 
 const ProductDetail = () => {
   return (

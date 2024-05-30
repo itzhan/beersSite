@@ -4,7 +4,6 @@ import {
   Heading,
   Box,
   VStack,
-  Stack,
   HStack,
   Button,
   Link,
@@ -81,7 +80,7 @@ const Home = () => {
                 color="#cab57e"
                 className={"fade-in-top"}
               >
-                铁根山药酒
+                铁棍山药酒
               </Heading>
               <Text mt={"5"} fontSize={"18px"} className={"fade-in-top2"}>
                 精选上等山药及多种珍贵中药材，通过独特的发酵工艺和现代化的酿造技术，历经数十道工序精心酿制而成

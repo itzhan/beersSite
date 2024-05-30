@@ -21,7 +21,6 @@ const SpriteSheet: React.FC<SpriteSheetProps> = ({
   frameWidth,
   frameHeight,
   spriteColumns,
-  spriteRows,
   startColumn,
   startRow,
   endColumn,

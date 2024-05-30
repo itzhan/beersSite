@@ -1,4 +1,3 @@
-import React from 'react';
 import lottie from 'lottie-web';
 import {defineElement} from 'lord-icon-element';
 
