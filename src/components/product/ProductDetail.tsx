@@ -32,7 +32,7 @@ const ProductDetail = () => {
         >
           工艺精神的极致展现
         </Heading>
-        <SimpleGrid columns={2} spacing={"40"} fontSize={"20px"} letterSpacing={"0.03em"}>
+        <SimpleGrid columns={2} spacing={"40"} fontSize={"20px"} letterSpacing={"0.03em"} color={'white'}>
           <Text data-aos="fade-right">
             自 18 世纪初以来，玛歌酒庄就酿造出了卓越而独特的白葡萄酒。
             <br />

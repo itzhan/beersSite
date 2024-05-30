@@ -90,15 +90,15 @@ const Home = () => {
               {buttonsVisible ? (
                 <>
                   <Link as={ReachLink} to={"/terroir"}>
-                    <Button color={"#cab57e"}>风土</Button>
+                    <Button color={"#cab57e"} bg={'rgba(255, 255, 255, 0.1)'} _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}>风土</Button>
                   </Link>
                   <Link as={ReachLink} to={"/product"}>
                     {" "}
-                    <Button color={"#cab57e"} size={"lg"}>
+                    <Button color={"#cab57e"} size={"lg"} bg={'rgba(255, 255, 255, 0.1)'} _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}>
                       产品
                     </Button>
                   </Link>
-                    <Button color={"#cab57e"}>历史</Button>
+                    <Button color={"#cab57e"} bg={'rgba(255, 255, 255, 0.1)'} _hover={{ bg: 'rgba(255, 255, 255, 0.2)' }}>历史</Button>
                 </>
               ) : (
                 <>
@@ -119,9 +119,9 @@ const Home = () => {
           >
             {bottomVisble && (
               <>
-                <Link>联系与参观</Link>
-                <Link>新闻中心</Link>
-                <Link>真伪查询</Link>
+                <Link color={'white'}>联系与参观</Link>
+                <Link color={'white'}>新闻中心</Link>
+                <Link color={'white'}>真伪查询</Link>
               </>
             )}
           </HStack>

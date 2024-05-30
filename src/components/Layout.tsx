@@ -39,7 +39,7 @@ const Layout = () => {
         _hover={{ cursor: "pointer" }}
       >
         <HStack onClick={handleClick}>
-          <Text fontSize={"13px"}  color={location.pathname === '/terroir' ? 'black' : 'inherit'}>主页</Text>
+          <Text fontSize={"13px"}  color={location.pathname === '/terroir' ? 'black' : 'white'}>主页</Text>
           <LordIcon src={url} trigger="click" size={40} />
         </HStack>
       </Box>
